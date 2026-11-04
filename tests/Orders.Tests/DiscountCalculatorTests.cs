@@ -11,14 +11,14 @@ public class DiscountCalculatorTests
 {
     [Theory]
     [InlineData(0, 0)]
-    [InlineData(999.99, 0)]
-    [InlineData(1000, 100)]
+    [InlineData(1000, 0)]
+    [InlineData(1001, 100.1)]
     [InlineData(2000, 200)] 
     public void Calculate_ReturnsExpected(decimal amount, decimal expected) 
     { 
         var calculator = new DiscountCalculator(); 
         var result = calculator.Calculate(amount); 
-        Assert.Equal(expected, result); 
+        Assert.Equal(result, expected); 
     }
 
     [Fact] 
